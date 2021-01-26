@@ -1,0 +1,81 @@
+/** @format */
+
+$base-color: #ccc;
+body {
+  background: $base-color;
+}
+
+header {
+  background: url(../bg.jpg);
+  height: 300px;
+}
+
+main {
+  background: #ffffff;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 2px 24px rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  min-height: 400px;
+}
+
+@function convertToEm($size, $from_px) {
+  $result: $size / $from_px;
+  @return $result + 0em;
+}
+
+.profile {
+  text-align: center;
+  font-size: 16px;
+  &__picture {
+    font-size: 100%;
+    position: relative;
+    top: convertToEm(-70, 16);
+    width: convertToEm(160, 16);
+    height: convertToEm(160, 16);
+  }
+  h1 {
+    font-weight: 500;
+    font-size: convertToEm(25.55, 16);
+    line-height: convertToEm(30, 25.55);
+    color: #3c4858;
+  }
+  &__profession {
+    font-size: convertToEm(14, 25.55);
+    line-height: convertToEm(16, 14);
+    color: #333333;
+  }
+}
+@mixin css_sprite($class_name, $from-top) {
+    width: 30px;
+    height: 30px;
+    background: url("../images/css_sprites.png") -10px -60px;
+}
+.favorite_icon {
+@include css_sprite(favorite_icon, -10px) {
+}
+.favorite_icon {
+  @include css_sprite(studio_icon, -60px) {
+  }
+.work_icon {
+@include css_sprite(work_icon, -110px) {
+}
+
+.gallery {
+  &__tab-nav {
+    display: flex;
+    justify-content: center;
+  }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius:4px;
+      text-decoration: none;
+    }
+  }
+
+
+@media only screen and (max-width: 600px) {
+  .profile {
+    font-size: 14px;
+  }
+}
