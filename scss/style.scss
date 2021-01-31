@@ -12,9 +12,9 @@ body {
 
 header {
   background: url(../bg.jpg);
-  height: 300px;
+  height: 381px;
 }
-header {
+.header-menu {
   padding: 23px 24px;
   display: flex;
   justify-content: space-between;
@@ -222,6 +222,21 @@ footer {
   }
   nav.top-menu.active {
     display: flex;
+  }
+}
+@media only screen and (max-width: 964px) {
+  .header-menu {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  footer {
+    flex-direction: column;
+  }
+  .footer-menu {
+    padding-bottom: 31px;
+    margin: auto;
+  }
+  .made-by {
+    align-self: center;
   }
 }
 @media only screen and (max-width: 655px) {
